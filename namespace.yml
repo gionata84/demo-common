@@ -1,5 +1,5 @@
 apiVersion: project.openshift.io/v1
-displayName: ${ACRONIMO}
+displayName: cb-${ACRO}-${ENV}
 kind: ProjectRequest
 metadata:
-      name: ${ACRONIMO}
+  name: cb-${ACRO}-${ENV}
