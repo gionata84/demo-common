@@ -21,3 +21,13 @@ spec:
     - data
     - index
     - query
+    volumeMounts:
+      default: couchbase 
+  volumeClaimTemplates: 
+  - metadata:
+      name: couchbase 
+    spec:
+      storageClassName: standard 
+      resources: 
+        requests:
+          storage: ${STORAGE}
