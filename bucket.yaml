@@ -1,0 +1,10 @@
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: ${ACRO}
+  namespace: cb-${ACRO}-${ENV}
+selector:
+  matchLabels:
+    cluster: cb-example
+spec:
+  memoryQuota: 128Mi
