@@ -1,0 +1,23 @@
+apiVersion: couchbase.com/v2
+kind: CouchbaseCluster
+metadata:
+  name: cbc-${ACRO}-${ENV}
+spec:
+  cluster:
+    clusterName: cbc-${ACRO}-${ENV}
+  image: 'registry.connect.redhat.com/couchbase/server:6.6.2-2'
+  security:
+    adminSecret: cb-${ACRO}-sec
+  buckets:
+    managed: true
+  monitoring:
+    prometheus:
+      enabled: true
+      image: 'registry.connect.redhat.com/couchbase/exporter:1.0.5-1'
+  servers:
+  - size: 1
+    name: all_services
+    services:
+    - data
+    - index
+    - query
